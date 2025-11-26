@@ -1,0 +1,3264 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#EFB7C6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="35 Days of Love">
+    <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiMzUgRGF5cyBvZiBMb3ZlIiwic2hvcnRfbmFtZSI6IkZvciBOb2FtIiwic3RhcnRfdXJsIjoiLiIsImRpc3BsYXkiOiJzdGFuZGFsb25lIiwiYmFja2dyb3VuZF9jb2xvciI6IiNGRkY5RjYiLCJ0aGVtZV9jb2xvciI6IiNFRkI3QzYiLCJpY29ucyI6W3sic3JjIjoiZGF0YTppbWFnZS9zdmcreG1sLCUzQ3N2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMDAgMTAwJyUzRSUzQ3RleHQgeT0nLjllbScgZm9udC1zaXplPSc5MCclM0UlRjAlOUYlOTIlOTYlM0MvdGV4dCUzRSUzQy9zdmclM0UiLCJzaXplcyI6IjUxMng1MTIiLCJ0eXBlIjoiaW1hZ2Uvc3ZnK3htbCJ9XX0=">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <title> 35 ימים ליום ההולדת שלך — לנועם היפה שלי</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Dancing+Script:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #FFF9F6;
+            --blush: #EFB7C6;
+            --powder: #C7D7E8;
+            --soft-black: #2A2A2A;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--cream) 0%, #FFF4EE 100%);
+            color: var(--soft-black);
+            min-height: 100vh;
+            line-height: 1.7;
+            overflow-x: hidden;
+            direction: rtl;
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            * {
+                transition: all 0.3s ease;
+            }
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 0 3rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 300;
+            color: var(--soft-black);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.02em;
+        }
+
+        .hero .for-noam {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(1.8rem, 6vw, 2.5rem);
+            color: var(--blush);
+            margin-bottom: 2rem;
+            display: inline-block;
+            animation: heartbeat 2s ease-in-out infinite;
+        }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 3rem;
+        }
+
+        /* Countdown */
+        .countdown-card {
+            background: var(--white);
+            border-radius: 2rem;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            margin-bottom: 3rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .countdown-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--soft-black);
+        }
+
+        .countdown-timer {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .time-unit {
+            text-align: center;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--blush) 0%, var(--powder) 100%);
+            border-radius: 1rem;
+            color: var(--white);
+        }
+
+        .time-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            display: block;
+            line-height: 1;
+        }
+
+        .time-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .today-surprise-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 1.2rem 2rem;
+            background: linear-gradient(135deg, var(--blush) 0%, #D89BAD 100%);
+            color: var(--white);
+            border: none;
+            border-radius: 1rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(239, 183, 198, 0.4);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .today-surprise-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(239, 183, 198, 0.5);
+        }
+
+        .today-surprise-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Calendar Grid */
+        .calendar-section {
+            animation: fadeInUp 1s ease 0.4s both;
+            margin-bottom: 3rem;
+        }
+
+        .calendar-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 1rem;
+        }
+
+        .day-card {
+            aspect-ratio: 1;
+            background: var(--white);
+            border-radius: 1rem;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .day-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--blush) 0%, var(--powder) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .day-card:hover::before {
+            opacity: 0.1;
+        }
+
+        .day-card.unlocked:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(239, 183, 198, 0.3);
+        }
+
+        .day-card.locked {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .day-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .day-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 0.25rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .lock-icon {
+            font-size: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.active {
+            display: block;
+        }
+
+        .modal-content {
+            background: var(--white);
+            border-radius: 2rem;
+            max-width: 600px;
+            width: calc(100% - 2rem);
+            margin: 2rem auto;
+            padding: 3rem 2rem 2rem;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: slideUp 0.4s ease;
+            max-height: none;
+            min-height: auto;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(0,0,0,0.05);
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--soft-black);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .close-btn:hover {
+            background: rgba(0,0,0,0.05);
+        }
+
+        .day-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .day-meta {
+            font-size: 0.9rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 0.5rem;
+        }
+
+        .day-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .love-note {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.3rem;
+            color: var(--blush);
+            text-align: center;
+            line-height: 1.6;
+            padding: 1.5rem;
+            background: rgba(239, 183, 198, 0.1);
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .divider {
+            text-align: center;
+            margin: 2rem 0;
+            font-size: 1.5rem;
+            opacity: 0.3;
+        }
+
+        .content-block {
+            margin-bottom: 2rem;
+        }
+
+        .block-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--blush);
+        }
+
+        .block-text {
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .prompt-box {
+            background: linear-gradient(135deg, var(--powder) 0%, #B8CDE0 100%);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            color: var(--white);
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        /* Interactive Games */
+        .interactive-game {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: rgba(239, 183, 198, 0.1);
+            border-radius: 1rem;
+            text-align: center;
+        }
+
+        .game-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--blush);
+        }
+
+        /* Love Letter Puzzle */
+        .puzzle-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin: 1.5rem 0;
+        }
+
+        .puzzle-word {
+            padding: 0.75rem 1rem;
+            background: var(--white);
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            user-select: none;
+        }
+
+        .puzzle-word:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(239, 183, 198, 0.3);
+        }
+
+        .puzzle-word.correct {
+            background: linear-gradient(135deg, var(--blush) 0%, #D89BAD 100%);
+            color: var(--white);
+            cursor: default;
+        }
+
+        /* Memory Card Game */
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .memory-card {
+            aspect-ratio: 1;
+            background: var(--white);
+            border-radius: 0.75rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .memory-card:hover:not(.flipped):not(.matched) {
+            transform: scale(1.05);
+        }
+
+        .memory-card.flipped, .memory-card.matched {
+            background: linear-gradient(135deg, var(--blush) 0%, var(--powder) 100%);
+        }
+
+        .memory-card:not(.flipped):not(.matched) {
+            background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
+        }
+
+        /* Love Meter */
+        .love-meter-container {
+            margin: 1.5rem 0;
+        }
+
+        .love-meter {
+            width: 100%;
+            height: 40px;
+            background: #f0f0f0;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: inset 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .love-meter-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--blush) 0%, #ff6b9d 100%);
+            width: 0%;
+            transition: width 1s ease;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .love-button {
+            margin-top: 1rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--blush) 0%, #D89BAD 100%);
+            color: var(--white);
+            border: none;
+            border-radius: 0.75rem;
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            box-shadow: 0 4px 15px rgba(239, 183, 198, 0.4);
+        }
+
+        .love-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(239, 183, 198, 0.5);
+        }
+
+        /* Fortune Teller */
+        .fortune-box {
+            min-height: 80px;
+            background: var(--white);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            font-style: italic;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Heart Rain */
+        .heart-catcher {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(180deg, #fff9f6 0%, #ffe8e8 100%);
+            border-radius: 1rem;
+            overflow: hidden;
+            margin: 1.5rem 0;
+            cursor: crosshair;
+        }
+
+        .falling-heart {
+            position: absolute;
+            font-size: 2rem;
+            animation: fall linear;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(300px);
+            }
+        }
+
+        .score-display {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--blush);
+            margin-top: 1rem;
+        }
+
+        /* Kiss Counter */
+        .kiss-button {
+            width: 120px;
+            height: 120px;
+            font-size: 4rem;
+            border-radius: 50%;
+            border: none;
+            background: linear-gradient(135deg, var(--blush) 0%, #ff6b9d 100%);
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(239, 183, 198, 0.4);
+            transition: all 0.2s ease;
+            margin: 1rem auto;
+            display: block;
+        }
+
+        .kiss-button:active {
+            transform: scale(0.95);
+        }
+
+        .kiss-counter {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--blush);
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        /* Scratch Card */
+        .scratch-card {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            height: 200px;
+            margin: 1.5rem auto;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        .scratch-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+            border-radius: 1rem;
+        }
+
+        .scratch-message {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--blush) 0%, var(--powder) 100%);
+            color: var(--white);
+            font-size: 1.2rem;
+            font-weight: 500;
+            border-radius: 1rem;
+        }
+
+        /* Spin the Wheel */
+        .wheel-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 1.5rem auto;
+        }
+
+        .wheel {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 8px solid var(--blush);
+            position: relative;
+            transition: transform 3s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+        }
+
+        .wheel-section {
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            transform-origin: 100% 100%;
+            clip-path: polygon(0 0, 100% 0, 100% 100%);
+        }
+
+        .wheel-pointer {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            z-index: 10;
+        }
+
+        /* Tic Tac Toe */
+        .tictactoe-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+            max-width: 300px;
+            margin: 1.5rem auto;
+        }
+
+        .tictactoe-cell {
+            aspect-ratio: 1;
+            background: var(--white);
+            border: 3px solid var(--blush);
+            border-radius: 0.5rem;
+            font-size: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .tictactoe-cell:hover:not(.taken) {
+            background: rgba(239, 183, 198, 0.1);
+            transform: scale(1.05);
+        }
+
+        .tictactoe-cell.taken {
+            cursor: not-allowed;
+        }
+
+        /* Quiz Game */
+        .quiz-question {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .quiz-option {
+            padding: 1rem;
+            background: var(--white);
+            border: 2px solid var(--powder);
+            border-radius: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: left;
+        }
+
+        .quiz-option:hover {
+            border-color: var(--blush);
+            transform: translateX(5px);
+        }
+
+        .quiz-option.correct {
+            background: linear-gradient(135deg, var(--blush) 0%, #D89BAD 100%);
+            color: var(--white);
+            border-color: var(--blush);
+        }
+
+        .quiz-option.wrong {
+            background: #f0f0f0;
+            opacity: 0.5;
+        }
+
+        /* Type the Love */
+        .typing-game {
+            margin: 1.5rem 0;
+        }
+
+        .typing-target {
+            font-size: 1.3rem;
+            font-family: 'Dancing Script', cursive;
+            color: var(--blush);
+            margin-bottom: 1rem;
+            text-align: center;
+            padding: 1rem;
+            background: rgba(239, 183, 198, 0.1);
+            border-radius: 0.75rem;
+        }
+
+        .typing-input {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.1rem;
+            border: 2px solid var(--powder);
+            border-radius: 0.75rem;
+            font-family: 'Inter', sans-serif;
+            text-align: center;
+        }
+
+        .typing-input:focus {
+            outline: none;
+            border-color: var(--blush);
+        }
+
+        /* Slider Puzzle */
+        .slider-puzzle {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+            max-width: 300px;
+            margin: 1.5rem auto;
+        }
+
+        .slider-tile {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--blush) 0%, var(--powder) 100%);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--white);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .slider-tile:hover {
+            transform: scale(1.05);
+        }
+
+        .slider-tile.empty {
+            background: #f0f0f0;
+            cursor: default;
+        }
+
+        /* Balloon Pop */
+        .balloon-game {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(180deg, #e8f4ff 0%, #fff9f6 100%);
+            border-radius: 1rem;
+            overflow: hidden;
+            margin: 1.5rem 0;
+        }
+
+        .balloon {
+            position: absolute;
+            font-size: 3rem;
+            cursor: pointer;
+            animation: float 4s ease-in-out infinite;
+            user-select: none;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(-5deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        .balloon:active {
+            animation: pop 0.3s ease;
+        }
+
+        @keyframes pop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(0); opacity: 0; }
+        }
+
+        /* Word Search */
+        .wordsearch-grid {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 0.25rem;
+            max-width: 400px;
+            margin: 1.5rem auto;
+        }
+
+        .wordsearch-cell {
+            aspect-ratio: 1;
+            background: var(--white);
+            border: 1px solid #e0e0e0;
+            border-radius: 0.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .wordsearch-cell.found {
+            background: linear-gradient(135deg, var(--blush) 0%, var(--powder) 100%);
+            color: var(--white);
+        }
+
+        .wordsearch-cell.selected {
+            background: rgba(239, 183, 198, 0.3);
+        }
+
+        .word-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .word-item {
+            padding: 0.5rem 1rem;
+            background: var(--white);
+            border-radius: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .word-item.found {
+            background: var(--blush);
+            color: var(--white);
+            text-decoration: line-through;
+        }
+
+        /* Connect Hearts */
+        .connect-canvas {
+            border: 3px solid var(--blush);
+            border-radius: 1rem;
+            display: block;
+            margin: 1.5rem auto;
+            background: var(--white);
+            cursor: crosshair;
+        }
+
+        /* Truth or Dare */
+        .card-stack {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 250px;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .dare-card {
+            width: 280px;
+            height: 200px;
+            background: linear-gradient(135deg, var(--blush) 0%, var(--powder) 100%);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            color: var(--white);
+            font-size: 1.1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: absolute;
+            transition: transform 0.5s ease;
+        }
+
+        @media (max-width: 640px) {
+            .memory-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .wheel-container {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .wordsearch-grid {
+                grid-template-columns: repeat(6, 1fr);
+            }
+            
+            .modal-content {
+                width: calc(100% - 1rem);
+                margin: 1rem auto;
+                padding: 2.5rem 1.5rem 1.5rem;
+                border-radius: 1.5rem;
+            }
+            
+            .close-btn {
+                top: 0.5rem;
+                left: 0.5rem;
+            }
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+            gap: 1rem;
+        }
+
+        .nav-btn {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid var(--blush);
+            background: var(--white);
+            color: var(--soft-black);
+            border-radius: 1rem;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .nav-btn:hover:not(:disabled) {
+            background: var(--blush);
+            color: var(--white);
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 3rem 0 2rem;
+            color: #999;
+            font-size: 0.9rem;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .footer-heart {
+            display: inline-block;
+            color: var(--blush);
+            animation: heartbeat 2s ease-in-out infinite;
+            margin: 0 0.5rem;
+        }
+
+        /* Final Days Big Cards */
+        .final-days-grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .final-day-card {
+            background: var(--white);
+            border-radius: 2rem;
+            padding: 3rem 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+            border: 3px solid var(--blush);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-day-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(239, 183, 198, 0.1) 0%, transparent 70%);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .final-day-card.locked {
+            opacity: 0.5;
+            filter: grayscale(0.5);
+        }
+
+        .final-day-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .final-day-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--blush) 0%, var(--powder) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .final-day-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        .final-game-container {
+            position: relative;
+            z-index: 1;
+            margin-top: 2rem;
+        }
+
+        /* Love Letter Builder */
+        .letter-builder {
+            background: rgba(255, 249, 246, 0.9);
+            border-radius: 1rem;
+            padding: 2rem;
+            min-height: 400px;
+        }
+
+        .letter-prompts {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .letter-prompt {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .letter-prompt label {
+            font-weight: 600;
+            color: var(--blush);
+            font-size: 1.1rem;
+        }
+
+        .letter-prompt input,
+        .letter-prompt textarea {
+            padding: 1rem;
+            border: 2px solid var(--powder);
+            border-radius: 0.75rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            resize: vertical;
+        }
+
+        .letter-prompt textarea {
+            min-height: 80px;
+        }
+
+        .letter-preview {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 1rem;
+            border: 2px dashed var(--blush);
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.3rem;
+            line-height: 2;
+            color: var(--soft-black);
+            min-height: 200px;
+            white-space: pre-wrap;
+        }
+
+        /* Photo Memory Timeline */
+        .memory-timeline {
+            padding: 2rem 0;
+        }
+
+        .memory-item {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            align-items: center;
+        }
+
+        .memory-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .memory-photo {
+            flex: 1;
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, var(--blush) 0%, var(--powder) 100%);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .memory-text {
+            flex: 1;
+            font-style: italic;
+            color: #666;
+        }
+
+        /* Couple Quiz Advanced */
+        .quiz-advanced {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .quiz-question-advanced {
+            background: rgba(239, 183, 198, 0.1);
+            padding: 2rem;
+            border-radius: 1rem;
+            border-left: 4px solid var(--blush);
+        }
+
+        .quiz-question-advanced h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--blush);
+        }
+
+        .score-tracker {
+            position: sticky;
+            top: 1rem;
+            background: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--blush);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            z-index: 10;
+        }
+
+        /* Virtual Date Night */
+        .date-planner {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .date-choice {
+            background: var(--white);
+            border: 3px solid transparent;
+            border-radius: 1rem;
+            padding: 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .date-choice:hover {
+            border-color: var(--blush);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(239, 183, 198, 0.3);
+        }
+
+        .date-choice.selected {
+            border-color: var(--blush);
+            background: rgba(239, 183, 198, 0.1);
+        }
+
+        .date-choice h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--blush);
+        }
+
+        /* Birthday Wish Tree */
+        .wish-tree-container {
+            position: relative;
+            min-height: 500px;
+            background: linear-gradient(180deg, #e8f4ff 0%, #fff9f6 100%);
+            border-radius: 1rem;
+            padding: 2rem;
+        }
+
+        .wish-tree {
+            position: relative;
+            width: 200px;
+            height: 300px;
+            margin: 0 auto;
+        }
+
+        .tree-trunk {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 100px;
+            background: #8B4513;
+            border-radius: 5px;
+        }
+
+        .tree-leaves {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 180px;
+            height: 220px;
+            background: radial-gradient(circle, #90EE90 0%, #228B22 100%);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+        }
+
+        .wish-ornament {
+            position: absolute;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .wish-ornament:hover {
+            transform: scale(1.2);
+        }
+
+        .wish-input {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .wish-input input {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid var(--blush);
+            border-radius: 0.75rem;
+            font-size: 1rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            10%, 30% { transform: scale(1.1); }
+            20%, 40% { transform: scale(1); }
+        }
+
+        @media (max-width: 640px) {
+            .countdown-timer {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .calendar-grid {
+                grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            }
+            
+            .modal-content {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* PWA Styles */
+        @media (display-mode: standalone) {
+            body {
+                padding-top: env(safe-area-inset-top);
+                padding-bottom: env(safe-area-inset-bottom);
+            }
+        }
+
+        /* iOS specific fixes */
+        @supports (-webkit-touch-callout: none) {
+            body {
+                min-height: -webkit-fill-available;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>35 ימים של אהבה</h1>
+            <div class="for-noam">לנועם היפה שלי</div>
+            <p class="tagline">שלושים וחמישה ימים של רומנטיקה, עד ליום המיוחד שלך</p>
+        </div>
+
+        <div class="countdown-card">
+            <h2 class="countdown-title">זמן עד יום ההולדת שלך 🎂</h2>
+            <div class="countdown-timer">
+                <div class="time-unit">
+                    <span class="time-number" id="days">00</span>
+                    <span class="time-label">ימים</span>
+                </div>
+                <div class="time-unit">
+                    <span class="time-number" id="hours">00</span>
+                    <span class="time-label">שעות</span>
+                </div>
+                <div class="time-unit">
+                    <span class="time-number" id="minutes">00</span>
+                    <span class="time-label">דקות</span>
+                </div>
+                <div class="time-unit">
+                    <span class="time-number" id="seconds">00</span>
+                    <span class="time-label">שניות</span>
+                </div>
+            </div>
+            <button class="today-surprise-btn" id="todaySurpriseBtn">ההפתעה של היום ✨</button>
+        </div>
+
+        <div class="calendar-section">
+            <h2 class="calendar-title">המסע שלנו ביחד</h2>
+            <div class="calendar-grid" id="calendarGrid"></div>
+        </div>
+
+        <div class="calendar-section" style="margin-top: 4rem;">
+            <h2 class="calendar-title" style="font-size: 2.5rem; margin-bottom: 2.5rem;">✨ הגמר הגדול ✨</h2>
+            <div id="finalDaysGrid"></div>
+        </div>
+
+        <div class="footer">
+            נוצר באהבה <span class="footer-heart">♡</span> יום הולדת שמח, נועם
+        </div>
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <button class="close-btn" id="closeBtn">×</button>
+            <div class="day-header">
+                <div class="day-meta" id="dayMeta">Day 1 of 30</div>
+                <h2 class="day-title" id="dayTitle"></h2>
+            </div>
+            <div class="love-note" id="loveNote"></div>
+            <div class="divider">✿</div>
+            <div class="content-block">
+                <div class="block-title">Memory & Promise</div>
+                <div class="block-text" id="memoryPromise"></div>
+            </div>
+            <div class="content-block">
+                <div class="block-title">Our Dream</div>
+                <div class="block-text" id="londonDream"></div>
+            </div>
+            <div class="prompt-box" id="promptBox"></div>
+            <div id="interactiveGame"></div>
+            <div class="navigation">
+                <button class="nav-btn" id="prevBtn">← Yesterday</button>
+                <button class="nav-btn" id="nextBtn">Tomorrow →</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const entries = [
+  {
+    title: "הספירה מתחילה",
+    loveNote: "נועם, זה הגן הסודי שלנו באינטרנט. שלושים וחמישה ימים של פתקים קטנים של אהבה—עוד צעד לקראת החגיגה שלך.",
+    memory: "מבטיח להפוך את ההמתנה לחלק מהקסם.",
+    dream: "חולם על הרגע שאאחל לך יום הולדת מושלם.",
+    prompt: "שלחי לי 🎀 אם את מתרגשת",
+    game: "puzzle"
+  },
+  {
+    title: "החיוך שלך הוא הזריחה שלי",
+    loveNote: "החיוך שלך מרגיש כמו אור בוקר—עדין ושום דבר לא עוצר אותו.",
+    memory: "אני זוכר את הפעם הראשונה שצחקת מהשטות שלי—מבטיח עוד כאלה.",
+    dream: "מתכנן את היום המושלם שיעשה לך חיוך שלא נגמר.",
+    prompt: "שלחי 🍓 אם את בפנים",
+    game: "quiz"
+  },
+  {
+    title: "אני בוחר בך כל יום",
+    loveNote: "זה לא הרגל. אני פשוט בוחר בך—כל יום מחדש.",
+    memory: "מבטיח להקשיב לך עם כל הלב.",
+    dream: "בוחר בך היום, מחר, וביום ההולדת שלך.",
+    prompt: "שלחי לי 🎻",
+    game: "lovemeter"
+  },
+  {
+    title: "השם שלך מהדהד רך",
+    loveNote: "נועם נשמע כמו הד רך שאני תמיד שמח לשמוע.",
+    memory: "אני אוהב את השיחות הליליות שלנו—מבטיח לילות עדינים.",
+    dream: "לוחש לך ברכות יום הולדת רק בשבילך.",
+    prompt: "שלחי לי ✨",
+    game: "typing"
+  },
+  {
+    title: "המבט שלך",
+    loveNote: "המבט הזה שאת נותנת לי—בית.",
+    memory: "מבטיח בקרים רגועים ונשיקות גנובות.",
+    dream: "מחכה לראות את הפנים שלך נדלקות מאושר.",
+    prompt: "שלחי 🥐",
+    game: "memory"
+  },
+  {
+    title: "בטוח איתך",
+    loveNote: "איתך אני סוף סוף נושם.",
+    memory: "מבטיח להיות הכתף שלך כשהעולם רועש.",
+    dream: "יוצר לך מקום בטוח לכל המשאלות של יום ההולדת.",
+    prompt: "שלחי 🦢",
+    game: "tictactoe"
+  },
+  {
+    title: "מקומות רכים",
+    loveNote: "את המקום הרך שלי לנחות בו.",
+    memory: "זוכרת את היום הגשום? מבטיח רגעים חמים כאלה.",
+    dream: "עוטף אותך בחום ביום ההולדת שלך.",
+    prompt: "שלחי 🫖",
+    game: "kisses"
+  },
+  {
+    title: "ניסים שקטים",
+    loveNote: "אהבה היא נס קטן ושקט—והוא כתוב נ-ו-ע-ם.",
+    memory: "מבטיח לשים לב לדברים הקטנים והיפים.",
+    dream: "כל יום איתך הוא נס, אבל יום ההולדת שלך? אקסטרה.",
+    prompt: "שלחי 🌿",
+    game: "slider"
+  },
+  {
+    title: "לב אמיץ",
+    loveNote: "אנחנו אמיצים—כי אנחנו אוהבים.",
+    memory: "מבטיח מילים כנות ורכות.",
+    dream: "חוגג את הלב האמיץ והיפה שלך.",
+    prompt: "שלחי 🌉",
+    game: "fortune"
+  },
+  {
+    title: "איך שאת אומרת את השם שלי",
+    loveNote: "אני משחזר בראש איך שאת אומרת את השם שלי.",
+    memory: "מבטיח לגרום לך להרגיש מיוחדת גם במקומות עמוסים.",
+    dream: "לא יכול לחכות לשמוע אותך צוחקת ביום ההולדת.",
+    prompt: "שלחי 🎭",
+    game: "balloon"
+  },
+  {
+    title: "הטקסים הקטנים שלנו",
+    loveNote: "הטקסים שלנו הופכים ימים רגילים לקדושים.",
+    memory: "מבטיח טקסים חדשים—נשיקה על כל שנה שאת בעולם.",
+    dream: "יוצר מסורות יום הולדת חדשות משלנו.",
+    prompt: "שלחי 🌅",
+    game: "heartcatcher"
+  },
+  {
+    title: "הצחוק שלך",
+    loveNote: "הצחוק שלך חי אצלי בראש בלי לשלם שכירות.",
+    memory: "מבטיח לאסוף עוד ועוד ממנו.",
+    dream: "מתכנן הפתעות שיעשו לך צחוק של אושר.",
+    prompt: "שלחי 🎸",
+    game: "wordsearch"
+  },
+  {
+    title: "אני בקבוצה שלך",
+    loveNote: "מה שלא יביא היום—אני בקבוצה שלך.",
+    memory: "מבטיח סבלנות בימים העייפים.",
+    dream: "מעודד אותך היום ותמיד.",
+    prompt: "שלחי 🌱",
+    game: "scratch"
+  },
+  {
+    title: "התחלות לנצח",
+    loveNote: "התחלות איתך מרגישות כמו לנצח.",
+    memory: "מבטיח להפוך את יום ההולדת שלך ללא נשכח.",
+    dream: "יום הולדת ראשון שאנחנו חוגגים—הראשון מני רבים.",
+    prompt: "שלחי 🔹",
+    game: "spin"
+  },
+  {
+    title: "חצי הדרך אלייך",
+    loveNote: "באמצע הספירה—אבל לגמרי שלך.",
+    memory: "מבטיח ריקוד איטי במקום המיוחד שלנו.",
+    dream: "הספירה כבר חצי מאחור—וההתרגשות רק גדלה.",
+    prompt: "שלחי 🍰",
+    game: "puzzle"
+  },
+  {
+    title: "אהבה שקטה",
+    loveNote: "אני אוהב אותך חזק—בדרכים שקטות.",
+    memory: "מבטיח ידיים חמות בימים קרים.",
+    dream: "אוהב אותך בשקט וחוגג אותך בקול.",
+    prompt: "שלחי 🕊️",
+    game: "connect"
+  },
+  {
+    title: "הרכות האמיצה שלך",
+    loveNote: "הרוך שלך הוא כוח אמיתי.",
+    memory: "מבטיח לשמור על הרכות שלנו.",
+    dream: "מכבד את העדינות והעוצמה שלך.",
+    prompt: "שלחי 🖼️",
+    game: "lovemeter"
+  },
+  {
+    title: "מוחזקת",
+    loveNote: "את מוחזקת. תמיד.",
+    memory: "מבטיח לראות כשאת צריכה חיבוק—even בלי שתבקשי.",
+    dream: "מחזיק מקום לכל החלומות שלך.",
+    prompt: "שלחי 🦕",
+    game: "dare"
+  },
+  {
+    title: "גם השקט בינינו",
+    loveNote: "אני אוהב גם את השקטים איתך.",
+    memory: "מבטיח שקט נעים כזה.",
+    dream: "שקט נוח וחגיגה שמחה—שניהם אנחנו.",
+    prompt: "שלחי 📚",
+    game: "memory"
+  },
+  {
+    title: "העיניים שלך—המפה שלי",
+    loveNote: "העיניים שלך הן המפה שאני הכי אוהב.",
+    memory: "מבטיח ללכת לאיבוד ביחד, בכוונה.",
+    dream: "העיניים שלך מובילות אותי להרפתקאות חדשות.",
+    prompt: "שלחי 🎨",
+    game: "quiz"
+  },
+  {
+    title: "מזג אוויר עדין",
+    loveNote: "איתך, מזג האוויר שבתוכי נהיה עדין יותר.",
+    memory: "מבטיח חום אחרי כל סערה.",
+    dream: "שיהיה לך יום הולדת מלא שמש.",
+    prompt: "שלחי 🏮",
+    game: "kisses"
+  },
+  {
+    title: "הבית שלי זה את",
+    loveNote: "עיר יכולה להשתנות. בית זה את.",
+    memory: "מבטיח להפוך כל מקום לבטוח.",
+    dream: "איפה שלא נהיה—את הבית. יום הולדת שמח אהובה.",
+    prompt: "שלחי 🧭",
+    game: "typing"
+  },
+  {
+    title: "היומיום המתוק",
+    loveNote: "אני רוצה את הרגעים הגדולים וגם את הקטנים שביניהם.",
+    memory: "מבטיח לעשות איתך את הכל—גם את 'הכלים' של החיים.",
+    dream: "היום הולדת: אפי. אנחנו: רגילים ומדהימים בו־זמנית.",
+    prompt: "שלחי 🚶",
+    game: "fortune"
+  },
+  {
+    title: "שומרת האור",
+    loveNote: "כשקצת חשוך—את שומרת לי על האור.",
+    memory: "מבטיח לשמור לך אור משלך.",
+    dream: "את מאירה לי את החיים—עכשיו תורך לזהור.",
+    prompt: "שלחי 💬",
+    game: "tictactoe"
+  },
+  {
+    title: "תסמכי עליי",
+    loveNote: "את יכולה לסמוך עליי. תמיד.",
+    memory: "מבטיח להופיע—במיוחד כשזה לא קל.",
+    dream: "סופר את הימים עד שאוכל לחגוג אותך כמו שצריך.",
+    prompt: "שלחי 🚪",
+    game: "heartcatcher"
+  },
+  {
+    title: "עתיד רך",
+    loveNote: "מדמיין עתיד רך איתך.",
+    memory: "מבטיח יותר פיקניקים ממריבות.",
+    dream: "ימי הולדת עתידיים איתך—עד אין סוף.",
+    prompt: "שלחי 🌬️",
+    game: "slider"
+  },
+  {
+    title: "הכל טעים יותר איתך",
+    loveNote: "איתך גם הדברים הפשוטים טעימים יותר.",
+    memory: "מבטיח לתת לך את הביס האחרון.",
+    dream: "שומר את הרגעים הכי מתוקים ליום הולדת שלך.",
+    prompt: "שלחי 🍯",
+    game: "scratch"
+  },
+  {
+    title: "כמעט שם",
+    loveNote: "אנחנו כמעט שם—ואני כבר מתגעגע לספירה.",
+    memory: "מבטיח המשך הרפתקאות גם אחרי יום ההולדת.",
+    dream: "קרובים כל־כך לחגוג אותך!",
+    prompt: "שלחי 🚤",
+    game: "balloon"
+  },
+  {
+    title: "פרפרים והתרגשות",
+    loveNote: "הפרפרים רוקדים, והיום הולדת מתקרב.",
+    memory: "מבטיח מילים עדינות תמיד.",
+    dream: "הציפייה הזאת—יפה.",
+    prompt: "שלחי ⏰",
+    game: "memory"
+  },
+  {
+    title: "הישורת האחרונה",
+    loveNote: "נועם, תודה שאת האדם האהוב עליי בעולם. יום ההולדת שלך כמעט כאן.",
+    memory: "מבטיח להפוך את היום הזה לאחד שתזכרי.",
+    dream: "עוד יום אחד של הספירה הרגילה—ואז מתחילים את הפינאלה!",
+    prompt: "שלחי לי איך את מרגישה ✨",
+    game: "puzzle"
+  }
+];
+
+ 
+
+        // Set start date (November 28, 2025) and birthday date (January 2, 2026)
+        const startDate = new Date('2025-11-28');
+        const flightDate = new Date('2026-01-02');
+        let currentDay = 1;
+
+        // For testing: change this date to test different scenarios
+        // const testDate = new Date('2025-12-25');
+        const testDate = new Date('2026-01-02'); // Set to null to use real current date
+
+        function getCurrentDate() {
+            return testDate ? new Date(testDate) : new Date();
+        }
+
+        function updateCountdown() {
+            const now = getCurrentDate();
+            const diff = flightDate.getTime() - now.getTime();
+
+            if (diff <= 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+
+        function getDaysPassed() {
+            const now = getCurrentDate();
+            const start = new Date(startDate);
+            
+            // Reset time to midnight for accurate day comparison
+            now.setHours(0, 0, 0, 0);
+            start.setHours(0, 0, 0, 0);
+            
+            const diffTime = now.getTime() - start.getTime();
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+            const daysPassed = diffDays + 1; // +1 because day 1 starts on start date
+            
+            console.log('Current date:', now);
+            console.log('Start date:', start);
+            console.log('Days passed:', daysPassed);
+            
+            return Math.max(1, Math.min(35, daysPassed));
+        }
+
+        // Interactive Games
+        function createPuzzleGame() {
+            const messages = [
+                "אני אוהב אותך יותר מכל דבר",
+                "את גורמת ללב שלי לדפוק מהר",
+                "לנצח בוחר בך כל בוקר",
+                "ביחד זה המקום האהוב עלי"
+            ];
+            const message = messages[Math.floor(Math.random() * messages.length)];
+            const words = message.split(' ');
+            const shuffled = [...words].sort(() => Math.random() - 0.5);
+            
+            let selected = [];
+            
+            const html = `
+                <div class="interactive-game">
+                    <div class="game-title">💌 תפתרי את פתק האהבה שלי</div>
+                    <p style="margin-bottom: 1rem; color: #666;">תלחצי על המילים בסדר הנכון:</p>
+                    <div class="puzzle-container" id="puzzleWords"></div>
+                    <div class="puzzle-container" id="puzzleSelected"></div>
+                </div>
+            `;
+            
+            document.getElementById('interactiveGame').innerHTML = html;
+            
+            const wordsContainer = document.getElementById('puzzleWords');
+            const selectedContainer = document.getElementById('puzzleSelected');
+            
+            function render() {
+                wordsContainer.innerHTML = shuffled.map((word, i) => 
+                    `<div class="puzzle-word" data-index="${i}">${word}</div>`
+                ).join('');
+                
+                selectedContainer.innerHTML = selected.map((word, i) => 
+                    `<div class="puzzle-word correct">${word}</div>`
+                ).join('');
+                
+                wordsContainer.querySelectorAll('.puzzle-word').forEach(el => {
+                    el.onclick = () => {
+                        const index = parseInt(el.dataset.index);
+                        selected.push(shuffled[index]);
+                        shuffled.splice(index, 1);
+                        render();
+                        
+                        if (selected.join(' ') === message) {
+                            selectedContainer.innerHTML += `<p style="margin-top: 1rem; color: var(--blush); font-style: italic;">מושלם! 💕</p>`;
+                        }
+                    };
+                });
+            }
+            
+            render();
+        }
+
+        function createMemoryGame() {
+            const emojis = ['❤️', '💕', '💖', '💗', '💝', '💘'];
+            const cards = [...emojis, ...emojis].sort(() => Math.random() - 0.5);
+            let flipped = [];
+            let matched = [];
+            
+            const html = `
+                <div class="interactive-game">
+                    <div class="game-title">💝 Memory Match</div>
+                    <p style="margin-bottom: 1rem; color: #666;">Find all the matching pairs:</p>
+                    <div class="memory-grid" id="memoryGrid"></div>
+                </div>
+            `;
+            
+            document.getElementById('interactiveGame').innerHTML = html;
+            
+            const grid = document.getElementById('memoryGrid');
+            grid.innerHTML = cards.map((emoji, i) => 
+                `<div class="memory-card" data-index="${i}">?</div>`
+            ).join('');
+            
+            grid.querySelectorAll('.memory-card').forEach(card => {
+                card.onclick = () => {
+                    const index = parseInt(card.dataset.index);
+                    
+                    if (flipped.length < 2 && !flipped.includes(index) && !matched.includes(index)) {
+                        card.textContent = cards[index];
+                        card.classList.add('flipped');
+                        flipped.push(index);
+                        
+                        if (flipped.length === 2) {
+                            setTimeout(() => {
+                                if (cards[flipped[0]] === cards[flipped[1]]) {
+                                    grid.querySelectorAll('.memory-card').forEach((c, i) => {
+                                        if (flipped.includes(i)) {
+                                            c.classList.add('matched');
+                                            matched.push(i);
+                                        }
+                                    });
+                                    
+                                    if (matched.length === cards.length) {
+                                        setTimeout(() => {
+                                            grid.innerHTML += `<p style="margin-top: 1rem; color: var(--blush); font-weight: 600;">You found all the love! 💕</p>`;
+                                        }, 300);
+                                    }
+                                } else {
+                                    grid.querySelectorAll('.memory-card').forEach((c, i) => {
+                                        if (flipped.includes(i)) {
+                                            c.textContent = '?';
+                                            c.classList.remove('flipped');
+                                        }
+                                    });
+                                }
+                                flipped = [];
+                            }, 800);
+                        }
+                    }
+                };
+            });
+        }
+
+        function createLoveMeter() {
+            let level = 0;
+            
+            const html = `
+                <div class="interactive-game">
+                    <div class="game-title">💗 Love Meter</div>
+                    <p style="margin-bottom: 1rem; color: #666;">כמה אהבה יש לנו?</p>
+                    <div class="love-meter-container">
+                        <div class="love-meter">
+                            <div class="love-meter-fill" id="loveMeterFill">❤️</div>
+                        </div>
+                    </div>
+                    <button class="love-button" id="loveMeterBtn">תוסיפי עוד אהבה</button>
+                    <p style="margin-top: 1rem; color: #999; font-size: 0.9rem;">(Hint: תמשיכי ללחוץ!)</p>
+                </div>
+            `;
+            
+            document.getElementById('interactiveGame').innerHTML = html;
+            
+            const fill = document.getElementById('loveMeterFill');
+            const btn = document.getElementById('loveMeterBtn');
+            
+            btn.onclick = () => {
+                level = Math.min(100, level + 10);
+                fill.style.width = level + '%';
+                
+                if (level === 100) {
+                    btn.textContent = 'זה מלא אבל לא מספיק! 💕';
+                    btn.disabled = true;
+                    btn.style.opacity = '0.7';
+                }
+            };
+        }
+
+        function createFortuneGame() {
+            const fortunes = [
+                "נתנשק בגשם בלונדון 💋",
+                "נחזיק ידיים לפחות ב7 גשרים ✨",
+                "נלך לאכול פיש אנד ציפס 📞",
+                "כל המוזיאון ישמע את הקול שלך במוזיאון הבריטי 🎨",
+                "אהבה ותה ☕",
+                "נסיעה באוטובוס 2 קומות 🚌",
+                "נלך ללונדון eye לראות את כל הבריטים בקטן🎡",
+                "נלך לחנות ספרים ונקנה ספרים בריטים 📚"
+            ];
+            
+            const html = `
+                <div class="interactive-game">
+                    <div class="game-title">🔮 London Fortune Teller (רק פעם אחת ותשלחי לי מה יצא :) )</div>
+                    <p style="margin-bottom: 1rem; color: #666;">Click to reveal your London destiny:</p>
+                    <div class="fortune-box" id="fortuneBox">✨ Click below to reveal ✨</div>
+                    <button class="love-button" id="fortuneBtn">Tell My Fortune</button>
+                </div>
+            `;
+            
+            document.getElementById('interactiveGame').innerHTML = html;
+            
+            document.getElementById('fortuneBtn').onclick = () => {
+                const fortune = fortunes[Math.floor(Math.random() * fortunes.length)];
+                document.getElementById('fortuneBox').textContent = fortune;
+            };
+        }
+
+        function createHeartCatcher() {
+            let score = 0;
+            let gameActive = true;
+            
+            const html = `
+                <div class="interactive-game">
+                    <div class="game-title">💕 Catch My Love</div>
+                    <p style="margin-bottom: 1rem; color: #666;">Click the falling hearts! (30 seconds)</p>
+                    <div class="heart-catcher" id="heartCatcher"></div>
+                    <div class="score-display">Hearts Caught: <span id="heartScore">0</span></div>
+                </div>
+            `;
+            
+            document.getElementById('interactiveGame').innerHTML = html;
+            
+            const container = document.getElementById('heartCatcher');
+            const scoreEl = document.getElementById('heartScore');
+            
+            function createHeart() {
+                if (!gameActive) return;
+                
+                const heart = document.createElement('div');
+                heart.className = 'falling-heart';
+                heart.textContent = ['💕', '💖', '💗', '💝'][Math.floor(Math.random() * 4)];
+                heart.style.left = Math.random() * 90 + '%';
+                heart.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                
+                heart.onclick = () => {
+                    score++;
+                    scoreEl.textContent = score;
+                    heart.remove();
+                };
+                
+                container.appendChild(heart);
+                
+                setTimeout(() => heart.remove(), 5000);
+                
+                if (gameActive) {
+                    setTimeout(createHeart, Math.random() * 800 + 400);
+                }
+            }
+            
+            createHeart();
+            
+            setTimeout(() => {
+                gameActive = false;
+                container.innerHTML += `<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 2rem; border-radius: 1rem; text-align: center; font-weight: 600; color: var(--blush);">Game Over!<br>You caught ${score} hearts! 💕</div>`;
+            }, 30000);
+        }
+
+        function createKissCounter() {
+            let kisses = 0;
+            
+            const html = `
+                <div class="interactive-game">
+                    <div class="game-title">💋 Kiss Counter</div>
+                    <p style="margin-bottom: 1rem; color: #666;">כמה נשיקות לתת לך היום?</p>
+                    <button class="kiss-button" id="kissBtn">💋</button>
+                    <div class="kiss-counter"><span id="kissCount">0</span> kisses</div>
+                </div>
+            `;
+            
+            document.getElementById('interactiveGame').innerHTML = html;
+            
+            document.getElementById('kissBtn').onclick = () => {
+                kisses++;
+                document.getElementById('kissCount').textContent = kisses;
+                
+                if (kisses === 10) {
+                    document.getElementById('kissCount').parentElement.innerHTML = `<span style="color: var(--blush);">∞ kisses (and counting!) 💕</span>`;
+                }
+            };
+        }
+
+        function createScratchCard() {
+            const messages = [
+                "אני שמח שאני איתך 💕",
+                "את פשוט כזאת יפה 🌍",
+                "מתנה רנומלית ממני 🎁",
+                "את יפיפייה בהגזמהההה ❤️"
+            ];
+            const message = messages[Math.floor(Math.random() * messages.length)];
+            
+            const html = `
+                <div class="interactive-game">
+                    <div class="game-title">✨ Scratch to Reveal (רק פעם אחת)</div>
+                    <p style="margin-bottom: 1rem; color: #666;">Scratch away the silver to reveal your message:</p>
+                    <div class="scratch-card">
+                        <div class="scratch-message">${message}</div>
+                        <canvas class="scratch-canvas" id="scratchCanvas" width="400" height="200"></canvas>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('interactiveGame').innerHTML = html;
+            
+            const canvas = document.getElementById('scratchCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Draw scratch surface
+            ctx.fillStyle = '#c0c0c0';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#999';
+            ctx.font = '20px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('❤️ Scratch Here ❤️', canvas.width / 2, canvas.height / 2);
+            
+            let isScratching = false;
+            
+            function scratch(e) {
+                if (!isScratching) return;
+                
+                const rect = canvas.getBoundingClientRect();
+                const x = e.clientX - rect.left || e.touches[0].clientX - rect.left;
+                const y = e.clientY - rect.top || e.touches[0].clientY - rect.top;
+                
+                ctx.globalCompositeOperation = 'destination-out';
+                ctx.beginPath();
+                ctx.arc(x, y, 20, 0, Math.PI * 2);
+                ctx.fill();
+            }
+            
+            canvas.addEventListener('mousedown', () => isScratching = true);
+            canvas.addEventListener('mouseup', () => isScratching = false);
+            canvas.addEventListener('mousemove', scratch);
+            canvas.addEventListener('touchstart', (e) => { e.preventDefault(); isScratching = true; });
+            canvas.addEventListener('touchend', () => isScratching = false);
+            canvas.addEventListener('touchmove', (e) => { e.preventDefault(); scratch(e); });
+        }
+
+        function createSpinWheel() {
+            const prizes = [
+                " 💋 נשיקה",
+                "קפה ☕",
+                "ריקוד סלואו 💃",
+                "שק קמח 🐷",
+                "את בוחרת מסעדה 🍽️",
+                "מכתב אהבה 💌",
+                "את בוחרת מוזיקה יום שלם 🎵",
+                "אקסטרה נשיקות וחיבוקים 🤗"
+            ];
+            
+            const html = `
+                <div class="interactive-game">
+                    <div class="game-title">🎡 Spin for a Prize!</div>
+                    <p style="margin-bottom: 1rem; color: #666;">סובבי את הגלגל וספרי לי מה יצא </p>
+                    <div class="wheel-container">
+                        <div class="wheel-pointer">👇</div>
+                        <div class="wheel" id="wheel"></div>
+                    </div>
+                    <button class="love-button" id="spinBtn">SPIN!</button>
+                    <p id="prizeResult" style="margin-top: 1rem; font-weight: 600; color: var(--blush); min-height: 24px;"></p>
+                </div>
+            `;
+            
+            document.getElementById('interactiveGame').innerHTML = html;
+            
+            const wheel = document.getElementById('wheel');
+            const colors = ['#EFB7C6', '#C7D7E8', '#FFD4E5', '#B8E0D2', '#F7CAC9', '#DECDF5', '#FFE5B4', '#D4A5A5'];
+            
+            wheel.innerHTML = prizes.map((prize, i) => {
+                const rotation = (360 / prizes.length) * i;
+                return `<div class="wheel-section" style="background: ${colors[i]}; transform: rotate(${rotation}deg)"></div>`;
+            }).join('');
+            
+            let spinning = false;
+            document.getElementById('spinBtn').onclick = () => {
+                if (spinning) return;
+                spinning = true;
+                
+                const spins = 5 + Math.random() * 3;
+                const extraDegrees = Math.random() * 360;
+                const totalRotation = (spins * 360) + extraDegrees;
+                
+                wheel.style.transform = `rotate(${totalRotation}deg)`;
+                
+                setTimeout(() => {
+                    const index = Math.floor((360 - (extraDegrees % 360)) / (360 / prizes.length)) % prizes.length;
+                    document.getElementById('prizeResult').textContent = `You won: ${prizes[index]}`;
+                    spinning = false;
+                }, 3000);
+            };
+        }
+
+        function createTicTacToe() {
+            let board = Array(9).fill('');
+            let currentPlayer = '❤️';
+            let gameOver = false;
+            
+            const html = `
+                <div class="interactive-game">
+                    <div class="game-title">❤️ איקס עיגול ⭕</div>
+                    <p style="margin-bottom: 1rem; color: #666;">את ❤️, אני ⭕. Let's play!</p>
+                    <div class="tictactoe-grid" id="tttGrid"></div>
+                    <p id="tttStatus" style="margin-top: 1rem; font-weight: 600; color: var(--blush);"></p>
+                    <button class="love-button" id="tttReset" style="margin-top: 1rem;">Play Again</button>
+                </div>
+            `;
+            
+            document.getElementById('interactiveGame').innerHTML = html;
+            
+            function checkWinner() {
+                const lines = [
+                    [0,1,2], [3,4,5], [6,7,8],
+                    [0,3,6], [1,4,7], [2,5,8],
+                    [0,4,8], [2,4,6]
+                ];
+                
+                for (let line of lines) {
+                    const [a,b,c] = line;
+                    if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+                        return board[a];
+                    }
+                }
+                
+                return board.every(cell => cell) ? 'tie' : null;
+            }
+            
+            function aiMove() {
+                const empty = board.map((cell, i) => cell === '' ? i : null).filter(i => i !== null);
+                if (empty.length > 0) {
+                    const move = empty[Math.floor(Math.random() * empty.length)];
+                    board[move] = '⭕';
+                    render();
+                }
+            }
+            
+            function render() {
+                const grid = document.getElementById('tttGrid');
+                grid.innerHTML = board.map((cell, i) => 
+                    `<div class="tictactoe-cell ${cell ? 'taken' : ''}" data-index="${i}">${cell}</div>`
+                ).join('');
+                
+                const winner = checkWinner();
+                if (winner) {
+                    gameOver = true;
+                    if (winner === 'tie') {
+                        document.getElementById('tttStatus').textContent = "It's a tie! 💕";
+                    } else {
+                        document.getElementById('tttStatus').textContent = winner === '❤️' ? "ניצחת! 🎉" : "ניצחתי! But you're still my winner 💕";
+                    }
+                } else {
+                    document.getElementById('tttStatus').textContent = currentPlayer === '❤️' ? "תורך!" : "תורי...";
+                }
+                
+                if (!gameOver) {
+                    grid.querySelectorAll('.tictactoe-cell:not(.taken)').forEach(cell => {
+                        cell.onclick = () => {
+                            if (gameOver || currentPlayer !== '❤️') return;
+                            const i = parseInt(cell.dataset.index);
+                            board[i] = currentPlayer;
+                            currentPlayer = '⭕';
+                            render();
+                            
+                            if (!checkWinner()) {
+                                setTimeout(() => {
+                                    aiMove();
+                                    currentPlayer = '❤️';
+                                    const winner = checkWinner();
+                                    if (winner) render();
+                                }, 500);
+                            }
+                        };
+                    });
+                }
+            }
+            
+            document.getElementById('tttReset').onclick = () => {
+                board = Array(9).fill('');
+                currentPlayer = '❤️';
+                gameOver = false;
+                render();
+            };
+            
+            render();
+        }
+
+        function createQuizGame() {
+            const quizzes = [
+                {
+                    question: "מה הדבר האהוב עלי בך?",
+                    options: ["החיוך שלך", "הצחוק שלך", "היופי שלך", "הכל! ✨"],
+                    correct: 3
+                },
+                {
+                    question: "מה הדבר שאני הכי אוהב שאת מכינה",
+                    options: ["חביתה 🎨", "רוזה ☕", "אוכל טעים 🚶", "הכל! 💕"],
+                    correct: 3
+                },
+                {
+                    question: "מה מיוחד בזוגיות שלנו?",
+                    options: ["איך שאנחנו תמיד מסיימים מלא סדרות ביחד", "הטעם המוזיקלי שלנו", "זה שאנחנו בוחרים אחד את השני כל יום", "כל התשובות נכונות 💖"],
+                    correct: 3
+                }
+            ];
+            
+            const quiz = quizzes[Math.floor(Math.random() * quizzes.length)];
+            
+            const html = `
+                <div class="interactive-game">
+                    <div class="game-title">💭 Love Quiz</div>
+                    <div class="quiz-question">${quiz.question}</div>
+                    <div class="quiz-options" id="quizOptions"></div>
+                </div>
+            `;
+            
+            document.getElementById('interactiveGame').innerHTML = html;
+            
+            const container = document.getElementById('quizOptions');
+            container.innerHTML = quiz.options.map((opt, i) => 
+                `<div class="quiz-option" data-index="${i}">${opt}</div>`
+            ).join('');
+            
+            container.querySelectorAll('.quiz-option').forEach(opt => {
+                opt.onclick = () => {
+                    const index = parseInt(opt.dataset.index);
+                    if (index === quiz.correct) {
+                        opt.classList.add('correct');
+                        opt.textContent += ' ✓ נכון! 💕';
+                    } else {
+                        opt.classList.add('wrong');
+                        container.children[quiz.correct].classList.add('correct');
+                    }
+                    container.querySelectorAll('.quiz-option').forEach(o => o.style.pointerEvents = 'none');
+                };
+            });
+        }
+
+        function createTypingGame() {
+            const phrases = [
+                "אני אוהב אותך ברמות",
+                "הימים שלי יותר יפים איתך",
+                "את מדהימה ויפה ברמות",
+                "כל הרפתקה מיוחדת איתך"
+            ];
+            
+            const phrase = phrases[Math.floor(Math.random() * phrases.length)];
+            
+            const html = `
+                <div class="interactive-game">
+                    <div class="game-title">⌨️ יאלה לכתוב</div>
+                    <p style="margin-bottom: 1rem; color: #666;">תכתבי את ההודעה :</p>
+                    <div class="typing-target">${phrase}</div>
+                    <input type="text" class="typing-input" id="typingInput" placeholder="תתחילי לכתוב..." autocomplete="off">
+                    <p id="typingResult" style="margin-top: 1rem; font-weight: 600; color: var(--blush); min-height: 24px;"></p>
+                </div>
+            `;
+            
+            document.getElementById('interactiveGame').innerHTML = html;
+            
+            const input = document.getElementById('typingInput');
+            const result = document.getElementById('typingResult');
+            
+            input.oninput = () => {
+                if (input.value === phrase) {
+                    result.textContent = "מדהים! 💕";
+                    input.disabled = true;
+                    input.style.borderColor = 'var(--blush)';
+                }
+            };
+        }
+
+        function createSliderPuzzle() {
+            const correctOrder = ['❤️', '💕', '💖', '💗', '💝', '💘', '💓', '💞', ''];
+            let tiles = [...correctOrder];
+            
+            // Shuffle by doing random valid moves
+            for (let i = 0; i < 50; i++) {
+                const emptyIndex = tiles.indexOf('');
+                const row = Math.floor(emptyIndex / 3);
+                const col = emptyIndex % 3;
+                const validMoves = [];
+                
+                if (row > 0) validMoves.push(emptyIndex - 3);
+                if (row < 2) validMoves.push(emptyIndex + 3);
+                if (col > 0) validMoves.push(emptyIndex - 1);
+                if (col < 2) validMoves.push(emptyIndex + 1);
+                
+                const randomMove = validMoves[Math.floor(Math.random() * validMoves.length)];
+                [tiles[emptyIndex], tiles[randomMove]] = [tiles[randomMove], tiles[emptyIndex]];
+            }
+            
+            const html = `
+                <div class="interactive-game">
+                    <div class="game-title">🧩 Heart Slider</div>
+                    <p style="margin-bottom: 0.5rem; color: #666;">סדרי את הלבבות לפי הסדר:</p>
+                    <div style="display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 1rem; font-size: 1.5rem;">
+                        ${correctOrder.slice(0, -1).join(' → ')}
+                    </div>
+                    <div class="slider-puzzle" id="sliderPuzzle"></div>
+                    <p id="sliderResult" style="margin-top: 1rem; font-weight: 600; color: var(--blush); min-height: 24px;"></p>
+                </div>
+            `;
+            
+            document.getElementById('interactiveGame').innerHTML = html;
+            
+            function checkWin() {
+                return tiles.every((tile, i) => tile === correctOrder[i]);
+            }
+            
+            function render() {
+                const puzzle = document.getElementById('sliderPuzzle');
+                puzzle.innerHTML = tiles.map((tile, i) => 
+                    `<div class="slider-tile ${tile === '' ? 'empty' : ''}" data-index="${i}">${tile}</div>`
+                ).join('');
+                
+                if (checkWin()) {
+                    document.getElementById('sliderResult').textContent = "Perfect! You solved it! 💕";
+                    return;
+                }
+                
+                puzzle.querySelectorAll('.slider-tile:not(.empty)').forEach(tile => {
+                    tile.onclick = () => {
+                        const i = parseInt(tile.dataset.index);
+                        const emptyIndex = tiles.indexOf('');
+                        const row = Math.floor(i / 3);
+                        const col = i % 3;
+                        const emptyRow = Math.floor(emptyIndex / 3);
+                        const emptyCol = emptyIndex % 3;
+                        
+                        const isAdjacent = (Math.abs(row - emptyRow) === 1 && col === emptyCol) ||
+                                         (Math.abs(col - emptyCol) === 1 && row === emptyRow);
+                        
+                        if (isAdjacent) {
+                            [tiles[i], tiles[emptyIndex]] = [tiles[emptyIndex], tiles[i]];
+                            render();
+                        }
+                    };
+                });
+            }
+            
+            render();
+        }
+
+        function createBalloonPop() {
+            let score = 0;
+            const balloons = ['🎈', '🎈', '🎈', '🎈', '💖'];
+            
+            const html = `
+                <div class="interactive-game">
+                    <div class="game-title">🎈 תלחצי על הבלונים!</div>
+                    <p style="margin-bottom: 1rem; color: #666;">תלחצי על כל הבלונים! נקודות נוספות על לבבות 💖</p>
+                    <div class="balloon-game" id="balloonGame"></div>
+                    <div class="score-display">ניקוד: <span id="balloonScore">0</span></div>
+                </div>
+            `;
+            
+            document.getElementById('interactiveGame').innerHTML = html;
+            
+            const container = document.getElementById('balloonGame');
+            
+            for (let i = 0; i < 12; i++) {
+                const balloon = document.createElement('div');
+                balloon.className = 'balloon';
+                balloon.textContent = balloons[Math.floor(Math.random() * balloons.length)];
+                balloon.style.left = Math.random() * 85 + '%';
+                balloon.style.top = Math.random() * 80 + '%';
+                balloon.style.animationDelay = Math.random() * 2 + 's';
+                
+                balloon.onclick = () => {
+                    score += balloon.textContent === '💖' ? 5 : 1;
+                    document.getElementById('balloonScore').textContent = score;
+                    balloon.style.animation = 'pop 0.3s ease forwards';
+                    setTimeout(() => balloon.remove(), 300);
+                };
+                
+                container.appendChild(balloon);
+            }
+        }
+
+        function createWordSearch() {
+            const words = ['LOVE', 'KISS', 'HEART', 'HUG'];
+            const size = 8;
+            let grid = Array(size).fill().map(() => Array(size).fill(''));
+            let foundWords = [];
+            let selecting = false;
+            let selectedCells = [];
+            
+            // Place words
+            words.forEach(word => {
+                let placed = false;
+                let attempts = 0;
+                while (!placed && attempts < 100) {
+                    attempts++;
+                    const dir = Math.random() < 0.5 ? 'h' : 'v';
+                    const row = Math.floor(Math.random() * size);
+                    const col = Math.floor(Math.random() * size);
+                    
+                    if (dir === 'h' && col + word.length <= size) {
+                        const canPlace = grid[row].slice(col, col + word.length).every(c => c === '' || word.includes(c));
+                        if (canPlace) {
+                            for (let i = 0; i < word.length; i++) grid[row][col + i] = word[i];
+                            placed = true;
+                        }
+                    } else if (dir === 'v' && row + word.length <= size) {
+                        const canPlace = grid.slice(row, row + word.length).every((r, i) => r[col] === '' || word[i] === r[col]);
+                        if (canPlace) {
+                            for (let i = 0; i < word.length; i++) grid[row + i][col] = word[i];
+                            placed = true;
+                        }
+                    }
+                }
+            });
+            
+            // Fill remaining with random letters
+            for (let i = 0; i < size; i++) {
+                for (let j = 0; j < size; j++) {
+                    if (grid[i][j] === '') {
+                        grid[i][j] = String.fromCharCode(65 + Math.floor(Math.random() * 26));
+                    }
+                }
+            }
+            
+            const html = `
+                <div class="interactive-game">
+                    <div class="game-title">🔍 חפשנינה (ראית מה עשיתי פה?)</div>
+                    <p style="margin-bottom: 1rem; color: #666;">חפשי את המילים:</p>
+                    <div class="word-list" id="wordList"></div>
+                    <div class="wordsearch-grid" id="wordGrid"></div>
+                    <p id="wordSearchResult" style="margin-top: 1rem; font-weight: 600; color: var(--blush); min-height: 24px;"></p>
+                </div>
+            `;
+            
+            document.getElementById('interactiveGame').innerHTML = html;
+            
+            document.getElementById('wordList').innerHTML = words.map(w => 
+                `<div class="word-item" data-word="${w}">${w}</div>`
+            ).join('');
+            
+            const gridEl = document.getElementById('wordGrid');
+            gridEl.innerHTML = grid.flat().map((letter, i) => 
+                `<div class="wordsearch-cell" data-index="${i}">${letter}</div>`
+            ).join('');
+            
+            const cells = gridEl.querySelectorAll('.wordsearch-cell');
+            
+            function checkSelection() {
+                const text = selectedCells.map(i => grid[Math.floor(i / size)][i % size]).join('');
+                const reversed = text.split('').reverse().join('');
+                
+                words.forEach(word => {
+                    if ((text === word || reversed === word) && !foundWords.includes(word)) {
+                        foundWords.push(word);
+                        selectedCells.forEach(i => cells[i].classList.add('found'));
+                        document.querySelector(`[data-word="${word}"]`).classList.add('found');
+                        
+                        if (foundWords.length === words.length) {
+                            document.getElementById('wordSearchResult').textContent = "You found all the words! 🎉💕";
+                        }
+                    }
+                });
+            }
+            
+            cells.forEach((cell, i) => {
+                cell.addEventListener('mousedown', () => {
+                    selecting = true;
+                    selectedCells = [i];
+                    cell.classList.add('selected');
+                });
+                
+                cell.addEventListener('mouseenter', () => {
+                    if (selecting && !selectedCells.includes(i)) {
+                        selectedCells.push(i);
+                        cell.classList.add('selected');
+                    }
+                });
+            });
+            
+            document.addEventListener('mouseup', () => {
+                if (selecting) {
+                    checkSelection();
+                    cells.forEach(c => c.classList.remove('selected'));
+                    selectedCells = [];
+                    selecting = false;
+                }
+            });
+        }
+
+        function createConnectHearts() {
+            const html = `
+                <div class="interactive-game">
+                    <div class="game-title">💝 חברי את הלבבות</div>
+                    <p style="margin-bottom: 1rem; color: #666;">שרטטי קו בין כל הלבבות בלי להרים את האצבע</p>
+                    <canvas class="connect-canvas" id="connectCanvas" width="350" height="350"></canvas>
+                </div>
+            `;
+            
+            document.getElementById('interactiveGame').innerHTML = html;
+            
+            const canvas = document.getElementById('connectCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            const hearts = [
+                {x: 50, y: 50}, {x: 300, y: 50}, 
+                {x: 175, y: 175}, 
+                {x: 50, y: 300}, {x: 300, y: 300}
+            ];
+            
+            hearts.forEach(h => {
+                ctx.font = '30px Arial';
+                ctx.fillText('💖', h.x - 15, h.y + 10);
+            });
+            
+            let drawing = false;
+            let lastPos = null;
+            
+            canvas.onmousedown = canvas.ontouchstart = (e) => {
+                drawing = true;
+                const rect = canvas.getBoundingClientRect();
+                const x = (e.clientX || e.touches[0].clientX) - rect.left;
+                const y = (e.clientY || e.touches[0].clientY) - rect.top;
+                lastPos = {x, y};
+            };
+            
+            canvas.onmousemove = canvas.ontouchmove = (e) => {
+                if (!drawing) return;
+                e.preventDefault();
+                
+                const rect = canvas.getBoundingClientRect();
+                const x = (e.clientX || e.touches[0].clientX) - rect.left;
+                const y = (e.clientY || e.touches[0].clientY) - rect.top;
+                
+                ctx.strokeStyle = '#EFB7C6';
+                ctx.lineWidth = 3;
+                ctx.lineCap = 'round';
+                ctx.beginPath();
+                ctx.moveTo(lastPos.x, lastPos.y);
+                ctx.lineTo(x, y);
+                ctx.stroke();
+                
+                lastPos = {x, y};
+            };
+            
+            canvas.onmouseup = canvas.ontouchend = () => {
+                drawing = false;
+            };
+        }
+
+        function createDareGame() {
+            const dares = [
+                "סמסי לי בווצאפ משהו שאת אוהבת בנו 💕",
+                "קחי סלפי ותשלחי לי אותו עכשיו 📸",
+                "שלחי לי voice note במבטא בריטי שאת אומרת שאת אוהבת אותי",
+                "ציירי לב עם השם שלי בפנים ותשלחי לי ❤️",
+                "תכתבי 3 דברים שאת אוהבת שאנחנו עושים📝",
+                "שלחי לי אמוג'ים שמסבירים דברים עלינו 💖✨",
+                "שלחי לי משהו שאת נהנית ממנו היום",
+                "שלחי לי שיר שמזכיר לך אותי 🎵"
+            ];
+            
+            const html = `
+                <div class="interactive-game">
+                    <div class="game-title">💌 אמת או חובה אבל רק חובה ופעם אחת, טוב פעמיים.</div>
+                    <p style="margin-bottom: 1rem; color: #666;">בואי נתחיל ציקיטיטה</p>
+                    <div class="card-stack">
+                        <div class="dare-card" id="dareCard">תלחצי 💕</div>
+                    </div>
+                    <button class="love-button" id="newDareBtn">חובה חדשה</button>
+                </div>
+            `;
+            
+            document.getElementById('interactiveGame').innerHTML = html;
+            
+            const card = document.getElementById('dareCard');
+            let flipped = false;
+            
+            function showDare() {
+                const dare = dares[Math.floor(Math.random() * dares.length)];
+                card.style.transform = 'rotateY(180deg)';
+                setTimeout(() => {
+                    card.textContent = dare;
+                    card.style.transform = 'rotateY(0deg)';
+                }, 300);
+            }
+            
+            card.onclick = () => {
+                if (!flipped) {
+                    showDare();
+                    flipped = true;
+                }
+            };
+            
+            document.getElementById('newDareBtn').onclick = () => {
+                showDare();
+                flipped = true;
+            };
+        }
+
+        function renderCalendar() {
+            const grid = document.getElementById('calendarGrid');
+            const unlockedDays = getDaysPassed();
+            
+            grid.innerHTML = '';
+            
+            // Render first 30 days
+            for (let i = 1; i <= 30; i++) {
+                const card = document.createElement('div');
+                card.className = `day-card ${i <= unlockedDays ? 'unlocked' : 'locked'}`;
+                
+                if (i <= unlockedDays) {
+                    card.innerHTML = `
+                        <div class="day-number">${i}</div>
+                        <div class="day-label">יום</div>
+                    `;
+                    card.onclick = () => openDay(i);
+                } else {
+                    card.innerHTML = `
+                        <div class="lock-icon">🔒</div>
+                        <div class="day-number">${i}</div>
+                    `;
+                }
+                
+                grid.appendChild(card);
+            }
+            
+            // Render final 5 days
+            renderFinalDays(unlockedDays);
+        }
+
+        function renderFinalDays(unlockedDays) {
+            const finalDays = [
+                {
+                    day: 31,
+                    title: "🎨 צייר את העתיד שלנו",
+                    description: "לוח ציור שיתופי - צרו אמנות ביחד",
+                    game: "drawingCanvas"
+                },
+                {
+                    day: 32,
+                    title: "🎯 כמה טוב אתה מכיר אותי?",
+                    description: "החידון האולטימטיבי לזוגות",
+                    game: "coupleQuiz"
+                },
+                {
+                    day: 33,
+                    title: "💫 גלריית הזיכרונות שלנו",
+                    description: "בנו גלריית תמונות של הרגעים שלנו",
+                    game: "memoryGallery"
+                },
+                {
+                    day: 34,
+                    title: "🎮 אתגר טריוויה אהבה",
+                    description: "שאלות מהירות עלינו",
+                    game: "loveTrivia"
+                },
+                {
+                    day: 35,
+                    title: "🎂 יום הולדת שמח, נועם!",
+                    description: "הגמר הגדול",
+                    game: "birthday"
+                }
+            ];
+            
+            const container = document.getElementById('finalDaysGrid');
+            container.className = 'final-days-grid';
+            container.innerHTML = finalDays.map(fd => `
+                <div class="final-day-card ${fd.day <= unlockedDays ? '' : 'locked'}" ${fd.day <= unlockedDays ? `onclick="openFinalDay(${fd.day})"` : ''} style="cursor: ${fd.day <= unlockedDays ? 'pointer' : 'not-allowed'}">
+                    <div class="final-day-header">
+                        <div class="final-day-number">יום ${fd.day}</div>
+                        <div class="final-day-title">${fd.title}</div>
+                        <p style="color: #666; margin-top: 0.5rem;">${fd.description}</p>
+                    </div>
+                    ${fd.day > unlockedDays ? '<div style="text-align: center; font-size: 3rem; margin-top: 2rem;">🔒</div>' : '<div style="text-align: center; color: var(--blush); font-weight: 600; margin-top: 1rem;">לחץ כדי לשחק! ✨</div>'}
+                </div>
+            `).join('');
+        }
+
+        function openFinalDay(day) {
+            currentDay = day;
+            const games = {
+                31: createDrawingCanvas,
+                32: createCoupleQuiz,
+                33: createMemoryGallery,
+                34: createLoveTrivia,
+                35: createBirthdayCelebration
+            };
+            
+            const modal = document.getElementById('modal');
+            const modalContent = modal.querySelector('.modal-content');
+            
+            modalContent.innerHTML = `
+                <button class="close-btn" id="closeBtn">×</button>
+                <div class="final-game-container" id="finalGameContainer"></div>
+            `;
+            
+            games[day]();
+            
+            document.getElementById('closeBtn').onclick = closeModal;
+            modal.classList.add('active');
+        }
+
+        // Final Day Special Games
+        function createDrawingCanvas() {
+            const html = `
+                <div class="day-header">
+                    <div class="day-meta">Day 31 of 35 - The Grand Finale Begins</div>
+                    <h2 class="day-title">🎨ציור שלנו</h2>
+                </div>
+                <div style="padding: 1rem;">
+                    <p style="text-align: center; color: #666; margin-bottom: 1.5rem; font-size: 1.1rem;">
+                        ציירי משהו ותשלחי לי! 💕
+                    </p>
+                    <div style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1rem;">
+                        <button class="love-button" style="padding: 0.75rem 1.5rem;" onclick="setDrawColor('#EFB7C6')">💗 Pink</button>
+                        <button class="love-button" style="padding: 0.75rem 1.5rem;" onclick="setDrawColor('#C7D7E8')">💙 Blue</button>
+                        <button class="love-button" style="padding: 0.75rem 1.5rem;" onclick="setDrawColor('#FF6B9D')">❤️ Red</button>
+                        <button class="love-button" style="padding: 0.75rem 1.5rem;" onclick="setDrawColor('#FFD700')">⭐ Gold</button>
+                        <button class="love-button" style="padding: 0.75rem 1.5rem;" onclick="setDrawColor('#000000')">🖤 Black</button>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; justify-content: center; margin-bottom: 1rem;">
+                        <button class="love-button" style="padding: 0.75rem 1.5rem;" onclick="setDrawSize('small')">Thin</button>
+                        <button class="love-button" style="padding: 0.75rem 1.5rem;" onclick="setDrawSize('medium')">Medium</button>
+                        <button class="love-button" style="padding: 0.75rem 1.5rem;" onclick="setDrawSize('large')">Thick</button>
+                    </div>
+                    <canvas id="drawCanvas" width="500" height="500" style="border: 3px solid var(--blush); border-radius: 1rem; display: block; margin: 0 auto; max-width: 100%; touch-action: none; background: white;"></canvas>
+                    <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1rem;">
+                        <button class="love-button" onclick="clearDrawing()">Clear Canvas</button>
+                        <button class="love-button" onclick="saveDrawing()">Save Drawing 💾</button>
+                    </div>
+                    <p style="text-align: center; margin-top: 1rem; color: var(--blush); font-style: italic;">
+                        Your masterpiece will be saved to your device!
+                    </p>
+                </div>
+            `;
+            
+            document.getElementById('finalGameContainer').innerHTML = html;
+            
+            const canvas = document.getElementById('drawCanvas');
+            const ctx = canvas.getContext('2d');
+            let isDrawing = false;
+            let currentColor = '#EFB7C6';
+            let currentSize = 3;
+            
+            // Set canvas actual size
+            const rect = canvas.getBoundingClientRect();
+            canvas.width = 500;
+            canvas.height = 500;
+            
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+            
+            function startDrawing(e) {
+                isDrawing = true;
+                const pos = getPos(e);
+                ctx.beginPath();
+                ctx.moveTo(pos.x, pos.y);
+            }
+            
+            function draw(e) {
+                if (!isDrawing) return;
+                e.preventDefault();
+                
+                const pos = getPos(e);
+                ctx.strokeStyle = currentColor;
+                ctx.lineWidth = currentSize;
+                ctx.lineTo(pos.x, pos.y);
+                ctx.stroke();
+            }
+            
+            function stopDrawing() {
+                isDrawing = false;
+            }
+            
+            function getPos(e) {
+                const rect = canvas.getBoundingClientRect();
+                const scaleX = canvas.width / rect.width;
+                const scaleY = canvas.height / rect.height;
+                
+                const clientX = e.clientX || (e.touches && e.touches[0].clientX);
+                const clientY = e.clientY || (e.touches && e.touches[0].clientY);
+                
+                return {
+                    x: (clientX - rect.left) * scaleX,
+                    y: (clientY - rect.top) * scaleY
+                };
+            }
+            
+            canvas.addEventListener('mousedown', startDrawing);
+            canvas.addEventListener('mousemove', draw);
+            canvas.addEventListener('mouseup', stopDrawing);
+            canvas.addEventListener('mouseout', stopDrawing);
+            
+            canvas.addEventListener('touchstart', startDrawing);
+            canvas.addEventListener('touchmove', draw);
+            canvas.addEventListener('touchend', stopDrawing);
+            
+            window.setDrawColor = (color) => {
+                currentColor = color;
+            };
+            
+            window.setDrawSize = (size) => {
+                const sizes = { small: 2, medium: 5, large: 10 };
+                currentSize = sizes[size];
+            };
+            
+            window.clearDrawing = () => {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            };
+            
+            window.saveDrawing = () => {
+                const link = document.createElement('a');
+                link.download = 'our-drawing-day31.png';
+                link.href = canvas.toDataURL();
+                link.click();
+                alert('Drawing saved! 💕');
+            };
+        }
+
+        function createCoupleQuiz() {
+            const questions = [
+                {
+                    q: "איך נועם הכי אוהבת להעביר ערב ביתי?",
+                    options: ["מרתון סרטים", "לקרוא ביחד", "לבשל ביחד", "להתכרבל"],
+                    points: 10
+                },
+                {
+                    q: "מה שפת האהבה של נועם?",
+                    options: ["מילים", "זמן איכות", "מגע", "מתנות"],
+                    points: 15
+                },
+            ];
+            
+            let score = 0;
+            let currentQ = 0;
+            
+            const html = `
+                <div class="day-header">
+                    <div class="day-meta">Day 32 of 35</div>
+                    <h2 class="day-title">🎯 כמה את מכירה את עצמך?</h2>
+                </div>
+                <div class="score-tracker">Score: <span id="quizScore">0</span> / 70</div>
+                <div class="quiz-advanced" id="quizContainer"></div>
+            `;
+            
+            document.getElementById('finalGameContainer').innerHTML = html;
+            
+            function renderQuestion() {
+                if (currentQ >= questions.length) {
+                    const finalScore = score;
+                    const percentage = Math.round((finalScore / 70) * 100);
+                    let message = '';
+                    
+                    if (percentage >= 80) message = "די טוב! 💕";
+                    else if (percentage >= 60) message = "לא רע! 🌟";
+                    else message = "יש עוד קצת דברים ללמוד! 💖";
+                    
+                    document.getElementById('quizContainer').innerHTML = `
+                        <div style="text-align: center; padding: 3rem;">
+                            <h2 style="font-size: 3rem; color: var(--blush); margin-bottom: 1rem;">${finalScore} / 70</h2>
+                            <p style="font-size: 1.5rem; margin-bottom: 1rem;">${percentage}%</p>
+                            <p style="font-size: 1.2rem; color: #666;">${message}</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                const q = questions[currentQ];
+                document.getElementById('quizContainer').innerHTML = `
+                    <div class="quiz-question-advanced">
+                        <h3>Question ${currentQ + 1} of ${questions.length}</h3>
+                        <p style="font-size: 1.2rem; margin: 1rem 0;">${q.q}</p>
+                        <div class="quiz-options">
+                            ${q.options.map((opt, i) => `
+                                <div class="quiz-option" onclick="answerQuestion(${i})">${opt}</div>
+                            `).join('')}
+                        </div>
+                        <p style="text-align: center; margin-top: 1rem; color: var(--blush); font-weight: 600;">
+                            Worth ${q.points} points
+                        </p>
+                    </div>
+                `;
+            }
+            
+            window.answerQuestion = (choiceIndex) => {
+                // Award points for any answer (you can customize which answers give points)
+                const q = questions[currentQ];
+                score += q.points;
+                document.getElementById('quizScore').textContent = score;
+                currentQ++;
+                setTimeout(renderQuestion, 500);
+            };
+            
+            renderQuestion();
+        }
+
+        function createMemoryGallery() {
+            const memories = [
+                { emoji: '☕', title: 'Coffee Dates', desc: 'Every cup shared, every conversation treasured' },
+                { emoji: '🌅', title: 'Sunset Moments', desc: 'Watching the world paint the sky together' },
+                { emoji: '🎵', title: 'Our Songs', desc: 'The soundtrack of us' },
+                { emoji: '😂', title: 'Inside Jokes', desc: 'Laughter that only we understand' },
+                { emoji: '🌙', title: 'Late Night Talks', desc: 'When the world sleeps, we dream' },
+                { emoji: '🎉', title: 'Celebrations', desc: 'Every milestone, big and small' },
+                { emoji: '🏠', title: 'Cozy Nights', desc: 'Home is wherever you are' },
+                { emoji: '✨', title: 'Magic Moments', desc: 'The ordinary made extraordinary' }
+            ];
+            
+            let selectedMemories = new Set();
+            
+            const html = `
+                <div class="day-header">
+                    <div class="day-meta">Day 33 of 35</div>
+                    <h2 class="day-title">💫 Our Memory Gallery</h2>
+                    <p style="text-align: center; color: #666; margin-top: 1rem;">
+                        Click on memories to add them to our gallery. Build our story!
+                    </p>
+                </div>
+                <div style="padding: 1rem;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0;">
+                        ${memories.map((mem, i) => `
+                            <div class="memory-card" id="mem-${i}" onclick="toggleMemory(${i})" style="
+                                background: white;
+                                border: 3px solid #e0e0e0;
+                                border-radius: 1rem;
+                                padding: 1.5rem;
+                                text-align: center;
+                                cursor: pointer;
+                                transition: all 0.3s ease;
+                            ">
+                                <div style="font-size: 3rem; margin-bottom: 0.5rem;">${mem.emoji}</div>
+                                <h3 style="font-family: 'Cormorant Garamond', serif; color: var(--blush); margin-bottom: 0.5rem;">${mem.title}</h3>
+                                <p style="font-size: 0.9rem; color: #666;">${mem.desc}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div style="background: rgba(239, 183, 198, 0.1); padding: 2rem; border-radius: 1rem; margin-top: 2rem;">
+                        <h3 style="text-align: center; color: var(--blush); margin-bottom: 1rem;">Your Selected Memories</h3>
+                        <div id="selectedDisplay" style="text-align: center; font-size: 2rem; min-height: 60px; display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; align-items: center;">
+                            Click memories above to add them here...
+                        </div>
+                        <p style="text-align: center; color: #666; margin-top: 1rem; font-size: 0.9rem;">
+                            Selected: <span id="memCount">0</span>/8
+                        </p>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('finalGameContainer').innerHTML = html;
+            
+            window.toggleMemory = (index) => {
+                const card = document.getElementById(`mem-${index}`);
+                const display = document.getElementById('selectedDisplay');
+                
+                if (selectedMemories.has(index)) {
+                    selectedMemories.delete(index);
+                    card.style.borderColor = '#e0e0e0';
+                    card.style.background = 'white';
+                    card.style.transform = 'scale(1)';
+                } else {
+                    selectedMemories.add(index);
+                    card.style.borderColor = 'var(--blush)';
+                    card.style.background = 'rgba(239, 183, 198, 0.1)';
+                    card.style.transform = 'scale(1.05)';
+                }
+                
+                if (selectedMemories.size === 0) {
+                    display.innerHTML = 'Click memories above to add them here...';
+                } else {
+                    display.innerHTML = Array.from(selectedMemories)
+                        .map(i => `<span style="font-size: 3rem;">${memories[i].emoji}</span>`)
+                        .join('');
+                }
+                
+                document.getElementById('memCount').textContent = selectedMemories.size;
+                
+                if (selectedMemories.size === 8) {
+                    setTimeout(() => {
+                        display.innerHTML += '<div style="width: 100%; margin-top: 1rem; color: var(--blush); font-size: 1.2rem; font-weight: 600;">Our complete story! 💕</div>';
+                    }, 500);
+                }
+            };
+        }
+
+        function createLoveTrivia() {
+            const triviaQuestions = [
+                {
+                    q: "What was the first thing that caught your attention about me?",
+                    options: ["Your smile", "Your eyes", "Your laugh", "Your energy"],
+                    timer: 10
+                },
+                {
+                    q: "If we could teleport anywhere right now, where would we go?",
+                    options: ["Beach sunset", "Mountain peak", "Cozy cabin", "City lights"],
+                    timer: 10
+                },
+                {
+                    q: "What's our perfect lazy Sunday activity?",
+                    options: ["Netflix marathon", "Cooking together", "Long walks", "Board games"],
+                    timer: 10
+                },
+                {
+                    q: "Which superpower would I want?",
+                    options: ["Time travel", "Flying", "Invisibility", "Mind reading"],
+                    timer: 10
+                },
+                {
+                    q: "What's my favorite way you show love?",
+                    options: ["Surprise gestures", "Words", "Touch", "Quality time"],
+                    timer: 10
+                },
+                {
+                    q: "In 5 years, where do you see us?",
+                    options: ["Same place, deeper love", "New city, new adventures", "Building our dream", "All of the above"],
+                    timer: 10
+                },
+                {
+                    q: "What's the best gift you could give me?",
+                    options: ["Your time", "A surprise", "Something meaningful", "Just you"],
+                    timer: 10
+                },
+                {
+                    q: "How do I like to celebrate special moments?",
+                    options: ["Big parties", "Intimate dinners", "Adventures", "Quiet together"],
+                    timer: 10
+                }
+            ];
+            
+            let currentQ = 0;
+            let score = 0;
+            let timeLeft = 10;
+            let timerInterval;
+            
+            const html = `
+                <div class="day-header">
+                    <div class="day-meta">Day 34 of 35</div>
+                    <h2 class="day-title">🎮 Love Trivia Challenge</h2>
+                    <p style="text-align: center; color: #666; margin-top: 1rem;">
+                        Fast-paced questions! Answer quickly before time runs out!
+                    </p>
+                </div>
+                <div style="padding: 1rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; padding: 1rem; background: rgba(239, 183, 198, 0.1); border-radius: 1rem;">
+                        <div style="font-size: 1.2rem; font-weight: 600; color: var(--blush);">
+                            Question <span id="qNum">1</span>/${triviaQuestions.length}
+                        </div>
+                        <div style="font-size: 1.5rem; font-weight: 600; color: var(--powder);">
+                            ⏰ <span id="timer">10</span>s
+                        </div>
+                        <div style="font-size: 1.2rem; font-weight: 600; color: var(--blush);">
+                            Score: <span id="triviaScore">0</span>
+                        </div>
+                    </div>
+                    <div id="triviaContainer"></div>
+                </div>
+            `;
+            
+            document.getElementById('finalGameContainer').innerHTML = html;
+            
+            function startTimer() {
+                timeLeft = 10;
+                document.getElementById('timer').textContent = timeLeft;
+                
+                clearInterval(timerInterval);
+                timerInterval = setInterval(() => {
+                    timeLeft--;
+                    document.getElementById('timer').textContent = timeLeft;
+                    
+                    if (timeLeft <= 0) {
+                        clearInterval(timerInterval);
+                        nextQuestion();
+                    }
+                }, 1000);
+            }
+            
+            function renderQuestion() {
+                if (currentQ >= triviaQuestions.length) {
+                    clearInterval(timerInterval);
+                    document.getElementById('triviaContainer').innerHTML = `
+                        <div style="text-align: center; padding: 3rem 1rem;">
+                            <div style="font-size: 4rem; margin-bottom: 1rem;">🎉</div>
+                            <h2 style="font-size: 2.5rem; color: var(--blush); margin-bottom: 1rem;">Final Score</h2>
+                            <div style="font-size: 5rem; font-weight: 600; color: var(--blush); margin: 1rem 0;">${score}</div>
+                            <p style="font-size: 1.3rem; color: #666;">
+                                ${score >= 6 ? "Amazing! You know me so well! 💕" : score >= 4 ? "Great job! We're learning together! 🌟" : "Every answer brings us closer! 💖"}
+                            </p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                const q = triviaQuestions[currentQ];
+                document.getElementById('qNum').textContent = currentQ + 1;
+                document.getElementById('triviaContainer').innerHTML = `
+                    <div style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                        <h3 style="font-size: 1.4rem; color: var(--soft-black); margin-bottom: 1.5rem; text-align: center;">
+                            ${q.q}
+                        </h3>
+                        <div style="display: grid; gap: 1rem;">
+                            ${q.options.map((opt, i) => `
+                                <button onclick="answerTrivia(${i})" style="
+                                    padding: 1.2rem;
+                                    background: linear-gradient(135deg, var(--blush) 0%, var(--powder) 100%);
+                                    color: white;
+                                    border: none;
+                                    border-radius: 0.75rem;
+                                    font-size: 1.1rem;
+                                    cursor: pointer;
+                                    transition: all 0.2s ease;
+                                    font-family: 'Inter', sans-serif;
+                                    font-weight: 500;
+                                " onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+                                    ${opt}
+                                </button>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+                
+                startTimer();
+            }
+            
+            function nextQuestion() {
+                currentQ++;
+                renderQuestion();
+            }
+            
+            window.answerTrivia = (choiceIndex) => {
+                clearInterval(timerInterval);
+                score++;
+                document.getElementById('triviaScore').textContent = score;
+                
+                setTimeout(() => {
+                    nextQuestion();
+                }, 500);
+            };
+            
+            renderQuestion();
+        }
+
+        function createBirthdayCelebration() {
+            const html = `
+                <div class="day-header">
+                    <div class="day-meta">Day 35 of 35 - THE DAY IS HERE!</div>
+                    <h2 class="day-title" style="font-size: 3rem;">🎂 Happy Birthday, Noam! 🎉</h2>
+                </div>
+                <div style="text-align: center; padding: 3rem 2rem;">
+                    <div style="font-size: 5rem; margin: 2rem 0; animation: heartbeat 1.5s ease-in-out infinite;">
+                        🎊🎉🎂🎁✨
+                    </div>
+                    <div style="font-family: 'Dancing Script', cursive; font-size: 2rem; color: var(--blush); line-height: 2; margin: 2rem 0;">
+                        Today, we celebrate you—<br>
+                        your kindness, your laughter,<br>
+                        your beautiful heart.<br><br>
+                        Thank you for being exactly who you are.<br>
+                        Here's to this year and all the ones to come.
+                    </div>
+                    <div style="margin: 3rem 0;">
+                        <div style="font-size: 3rem; margin: 1rem 0;">🎈</div>
+                        <p style="font-size: 1.3rem; color: #666; max-width: 500px; margin: 0 auto;">
+                            35 days of counting down, and now we're here. I hope this brought a little magic to your mornings and made the wait feel special.
+                        </p>
+                    </div>
+                    <div style="background: linear-gradient(135deg, var(--blush) 0%, var(--powder) 100%); color: white; padding: 2rem; border-radius: 1rem; margin: 2rem 0;">
+                        <p style="font-size: 1.5rem; margin: 0;">
+                            Make a wish, blow out the candles, and let's make this year unforgettable. 🕯️✨
+                        </p>
+                    </div>
+                    <button class="love-button" style="font-size: 1.2rem; padding: 1.5rem 3rem;" onclick="alert('🎉 Wishing you the happiest birthday! I love you! 💕')">
+                        Blow Out the Candles! 🎂
+                    </button>
+                </div>
+            `;
+            
+            document.getElementById('finalGameContainer').innerHTML = html;
+        }
+
+        function openDay(day) {
+            const unlockedDays = getDaysPassed();
+            if (day > unlockedDays) return;
+            
+            currentDay = day;
+            const entry = entries[day - 1];
+            
+            document.getElementById('dayMeta').textContent = `יום ${day} מתוך 35`;
+            document.getElementById('dayTitle').textContent = entry.title;
+            document.getElementById('loveNote').textContent = entry.loveNote;
+            document.getElementById('memoryPromise').textContent = entry.memory;
+            document.getElementById('londonDream').textContent = entry.dream;
+            document.getElementById('promptBox').textContent = entry.prompt;
+            
+            document.getElementById('prevBtn').disabled = day === 1;
+            document.getElementById('nextBtn').disabled = day === unlockedDays;
+            
+            // Load interactive game if exists
+            const gameContainer = document.getElementById('interactiveGame');
+            if (entry.game) {
+                switch(entry.game) {
+                    case 'puzzle': createPuzzleGame(); break;
+                    case 'memory': createMemoryGame(); break;
+                    case 'lovemeter': createLoveMeter(); break;
+                    case 'fortune': createFortuneGame(); break;
+                    case 'heartcatcher': createHeartCatcher(); break;
+                    case 'kisses': createKissCounter(); break;
+                    case 'scratch': createScratchCard(); break;
+                    case 'spin': createSpinWheel(); break;
+                    case 'tictactoe': createTicTacToe(); break;
+                    case 'quiz': createQuizGame(); break;
+                    case 'typing': createTypingGame(); break;
+                    case 'slider': createSliderPuzzle(); break;
+                    case 'balloon': createBalloonPop(); break;
+                    case 'wordsearch': createWordSearch(); break;
+                    case 'connect': createConnectHearts(); break;
+                    case 'dare': createDareGame(); break;
+                }
+            } else {
+                gameContainer.innerHTML = '';
+            }
+            
+            document.getElementById('modal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+        }
+
+        document.getElementById('todaySurpriseBtn').addEventListener('click', () => {
+            openDay(getDaysPassed());
+        });
+
+        document.getElementById('closeBtn').addEventListener('click', closeModal);
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            if (currentDay > 1) {
+                openDay(currentDay - 1);
+            }
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            const unlockedDays = getDaysPassed();
+            if (currentDay < unlockedDays) {
+                openDay(currentDay + 1);
+            }
+        });
+
+        document.getElementById('modal').addEventListener('click', (e) => {
+            if (e.target.id === 'modal') {
+                closeModal();
+            }
+        });
+
+        // Initialize
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+        renderCalendar();
+
+        // PWA Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                // Create a simple service worker inline
+                const swCode = `
+                    self.addEventListener('install', (e) => {
+                        e.waitUntil(
+                            caches.open('love-countdown-v1').then((cache) => {
+                                return cache.addAll(['/']);
+                            })
+                        );
+                    });
+                    
+                    self.addEventListener('fetch', (e) => {
+                        e.respondWith(
+                            caches.match(e.request).then((response) => {
+                                return response || fetch(e.request);
+                            })
+                        );
+                    });
+                `;
+                
+                const blob = new Blob([swCode], { type: 'application/javascript' });
+                const swUrl = URL.createObjectURL(blob);
+                
+                navigator.serviceWorker.register(swUrl)
+                    .then(() => console.log('PWA ready!'))
+                    .catch(() => console.log('PWA registration failed'));
+            });
+        }
+
+        // Prevent pull-to-refresh on iOS
+        let startY = 0;
+        document.addEventListener('touchstart', (e) => {
+            startY = e.touches[0].pageY;
+        }, { passive: true });
+
+        document.addEventListener('touchmove', (e) => {
+            const y = e.touches[0].pageY;
+            if (window.scrollY === 0 && y > startY) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+    </script>
+</body>
+</html>
