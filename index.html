@@ -3136,6 +3136,7 @@
             
             document.getElementById('dayMeta').textContent = `יום ${day} מתוך 35`;
             document.getElementById('dayTitle').textContent = entry.title;
+            document.getElementById('loveNote').textContent = entry.loveNote;
             document.getElementById('memoryPromise').textContent = entry.memory;
 document.getElementById('londonDream').textContent = entry.dream;
 
@@ -3152,7 +3153,12 @@ if (!entry.dream) {
     document.getElementById('londonDream').parentElement.style.display = 'block';
 }
             document.getElementById('londonDream').textContent = entry.dream;
-            document.getElementById('promptBox').textContent = entry.prompt;
+            if (entry.prompt && entry.prompt.trim() !== '') {
+    document.getElementById('promptBox').textContent = entry.prompt;
+    document.getElementById('promptBox').style.display = 'block';
+} else {
+    document.getElementById('promptBox').style.display = 'none';
+}
             
             document.getElementById('prevBtn').disabled = day === 1;
             document.getElementById('nextBtn').disabled = day === unlockedDays;
